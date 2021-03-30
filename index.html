@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faiz Sabli</title>
+    <link rel="stylesheet" href="spectre.css">
+    <link rel="stylesheet" href="b.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            //show the body like below
+            $("body").fadeIn(500);
+        });
+
+        function sendmessage() {
+            message1 = document.getElementById("message1").value;
+            message2 = document.getElementById("message2").value;
+            message3 = document.getElementById("message3").value;
+            message4 = document.getElementById("message4").value;
+            message5 = document.getElementById("message5").value;
+            message6 = document.getElementById("message6").value;
+            if (message1 === "") {
+                alert("Name Missing: Please fill up your name.");
+                return false;
+            }
+            if (message2 === "") {
+                alert("Email Missing: Please fill up your email");
+                return false;
+            }
+            if (message3 === "") {
+                alert("Country Code Missing: Please select your country code");
+                return false;
+            }
+            if (message4 === "") {
+                alert("Phone Number Missing: Please fill up your phone number");
+                return false;
+            }
+            if (message5 === "") {
+                alert("Session Missing: Please select your free zoom webinar session")
+                return false;
+            }
+            if (message6 === "") {
+                alert("Mortgage Loan Status Missing: Please select your mortgage loan status");
+                return false;
+            }
+
+
+            $.get("https://api.telegram.org/bot1757278156:AAGowug39I6Wr176O_wzKi8Z0cjz1c1fDtk/sendMessage?chat_id=1490955699&text=" + "Name: " + message1 + "%0AEmail: " + message2 + "%0APhone: " + message3 + message4 + "%0ASession: " + message5 + "%0ALoan Status: " + message6);
+            alert("Success! Your seat booking is on queue! Our office will send you a confirmation of your registration, Zoom link and instructions. See you soon!");
+        }
+
+        setInterval(function time() {
+            var d = new Date();
+            var hours = 24 - d.getHours();
+            var min = 60 - d.getMinutes();
+            if ((min + '').length == 1) {
+                min = '0' + min;
+            }
+            var sec = 60 - d.getSeconds();
+            if ((sec + '').length == 1) {
+                sec = '0' + sec;
+            }
+            jQuery('#the-final-countdown').html(hours + ':' + min + ':' + sec)
+        });
+    </script>
+    <script type="text/javascript">
+        function labnolIframe(div) {
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute(
+                'src',
+                'https://www.youtube.com/embed/' + div.dataset.id + '?autoplay=1&rel=0'
+            );
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allowfullscreen', '1');
+            iframe.setAttribute(
+                'allow',
+                'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+            );
+            div.parentNode.replaceChild(iframe, div);
+        }
+
+        function initYouTubeVideos() {
+            var playerElements = document.getElementsByClassName('youtube-player');
+            for (var n = 0; n < playerElements.length; n++) {
+                var videoId = playerElements[n].dataset.id;
+                var div = document.createElement('div');
+                div.setAttribute('data-id', videoId);
+                var thumbNode = document.createElement('img');
+                thumbNode.src = '//i.ytimg.com/vi/ID/hqdefault.jpg'.replace(
+                    'ID',
+                    videoId
+                );
+                div.appendChild(thumbNode);
+                var playButton = document.createElement('div');
+                playButton.setAttribute('class', 'play');
+                div.appendChild(playButton);
+                div.onclick = function () {
+                    labnolIframe(this);
+                };
+                playerElements[n].appendChild(div);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initYouTubeVideos);
+    </script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="columns">
+            <div class="column col-11 col-mx-auto col-md-11">
+                <img class="logo-img" src="Proptech.png" alt="Proptech Logo">
+                <div class="text-tiny text-bold">World Property Management Technology Foundation</div>
+                <div class="text-tiny text-bold">Proptech Foundation</div>
+                <div class="container text-center mg-top">
+                    <div class="columns">
+                        <div class="mg-bot column col-6 col-md-12 flex-centered">
+                            <img class="profile-img flex-centered" src="Faiz Sabli.jpg">
+                            <div class="text-left">
+                                <div class="text-small text-bold">&#128075; Hello, I'm Faiz Sabli.</div>
+                            </div>
+                        </div>
+                        <div class="mg-bot column col-6 col-md-12 flex-centered">
+                            <div class="text-small text-bold">A Certified Affiliate of Kevin Lo Proptech Foundation
+                                Agency</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pd-top bg-shade text-white rounded-corners box-shade">
+                    <div class="p-card h2">Home Sweet Home</div>
+                    <div class="container text-center">
+                        <div class="columns">
+                            <div class="column col-12 flex-centered">
+                                <img class="img-width" src="house.jpg" alt="house">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="pd-top p-card h3 text-torq">Never-Ending Loan Repayment</div>
+                    <div class="p-card text-large">Have you been paying your mortgage loan and realised that the loan
+                        principle amount didn't change much at all?</div>
+                    <div class="p-card text-large text-bold">It is because most of your repayment goes to pay the loan
+                        interest.</div>
+                </div>
+
+
+
+                <div class="mg-top pd-top bg-dark-grey text-white rounded-corners box-shade">
+                    <div class="p-card h3 text-torq">The Secret</div>
+                    <div class="p-card text-large">If you follow the repayment instructions given by the bank,
+                        <strong>up to 70% or more</strong> of your monthly repayment <strong>will go to the bank
+                            interest</strong> as the interest rates change from time to time.</div>
+                    <div class="p-card text-large">Only <strong>less that 30%</strong> of your monthly repayment is
+                        paying <strong>towards the principle!</strong> Therefore, <strong>your loan will never
+                            end!</strong></div>
+                </div>
+
+
+
+                <div class="mg-top pd-top bg-shade text-white rounded-corners box-shade">
+                    <div class="p-card h3 text-torq">The truth is...</div>
+                    <div class="p-card h5">When we are in a pinch</div>
+                    <div class="p-card h5">It is painful to accept that the bank is the true owner our properties.</div>
+                    <div class="p-card h5">If we can't pay them back. They can do whatever they want with them.</div>
+                    <div class="pd-bot container text-center">
+                        <div class="columns">
+                            <div class="column col-12 flex-centered">
+                                <img class="img-width" src="house bank owned.jpg" alt="bank owned house">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="mg-top pd-top pd-bot bg-dark-grey text-white rounded-corners box-shade">
+                    <div class="p-card h3 text-torq">The Solution</div>
+                    <div class="mg-bot h5 bg-blood-red box-shade">- Time-limited Special Promotion -</div>
+                    <div class="p-card h4">I'm kindly offering you a seat for <b class="text-torq">FREE</b> to a special
+                        zoom event called</div>
+                    <div class="p-card pd-top mg-bot h2 bg-shade text-white text-bold box-shade">"Introduction to The
+                        Greatest Financial Secret Revealed"</div>
+                    <div class="p-card h5">When you attend this special event you'll <b>get 3 things</b></div>
+                    <div class="p-card h5 text-bold">1 - <span class="text-torq">FREE</span> Hi-Tech mortgage evaluation
+                    </div>
+                    <div class="p-card h5 text-bold">2 - <span class="text-torq">FREE</span> Seat to our invite-only
+                        Zoom webinar</div>
+                    <div class="p-card h5 text-bold">3 - <span class="text-torq">FREE</span> Customized Mortgage
+                        repayment strategy from our experts</div>
+                    <div class="h5 bg-blood-red box-shade">Scroll down & book your free seat</div>
+                </div>
+
+
+                <div class="mg-top pd-top bg-shade text-white rounded-corners box-shade">
+                    <div class="p-card h2">We have helped people save <strong class="text-torq">RM 60 million</strong>
+                        of loan interest in 2020.</div>
+                </div>
+
+
+                <div class="mg-top pd-top bg-dark-grey text-white rounded-corners box-shade">
+                    <div class="p-card h3 text-torq">Testimonials</div>
+                    <div class="p-card h5">Here are some of the great people that got empowered by Proptech.</div>
+                    <div class="text-small text-bold">Let's watch a 2-min video</div>
+                    <div class="pd-bot container">
+                        <div class="columns">
+                            <div class="column flex-centered">
+                                <div id="main">
+                                    <div class="youtube-player flex-centered" data-id="GqQcvaxgNvg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-card h3 text-torq">Achievements</div>
+                    <div class="p-card h5">We were selected for various awards such as Consumer Choice Awards by (Majlis
+                        Tindakan Pengguna Negara) MTPN.</div>
+                    <div class="pd-bot container max-w">
+                        <div class="columns">
+                            <div class="column col-12 flex-centered">
+                                <div class="fotorama">
+                                    <img src="1.jpg">
+                                    <img src="2.jpg">
+                                    <img src="3.jpg">
+                                    <img src="4.jpg">
+                                    <img src="5.jpg">
+                                    <img src="6.jpg">
+                                    <img src="7.jpg">
+                                    <img src="8.jpg">
+                                    <img src="9.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container text-center mg-top pd-top-bottom bg-shade text-white rounded-corners box-shade">
+                    <div class="columns box-shade">
+                        <div class="column col-6 col-md-12 pd-all bg-dark-grey">
+                            <div class="h3 text-bold">A <span class="text-torq">Smarter Way</span> to Repay Your
+                                Mortgage Loan</div>
+                            <div class="h5">Using AI FinTech to beat the mortgage system. <span
+                                    class="text-torq text-bold">Slash 75%</span> of your payable interest.</div>
+                        </div>
+                        <div class="column col-6 col-md-12 pd-all bg-grey">
+                            <div class="h3 text-bold">The <span class="text-torq">Power</span> of Artificial
+                                Intelligence (AI) FinTech</div>
+                            <div class="h5">A proven loan repayment technology with <span
+                                    class="text-torq text-bold">over 99%</span> accuracy guarantee.</div>
+                        </div>
+                        <div class="column col-6 col-md-12 pd-all bg-dark-grey">
+                            <div class="h3 text-bold">Become Debt Free. <span class="text-torq">Easily.</span></div>
+                            <div class="h5">End Your Never-Ending Loan.</div>
+                        </div>
+                        <div class="column col-6 col-md-12 pd-all bg-grey">
+                            <div class="h3 text-bold">Own your properties. <span class="text-torq">Don't</span> let the
+                                bank own them.</div>
+                            <div class="h5">Significantly Reduce Your Mortgage Period.</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="mg-top pd-top mg-bot bg-dark-grey text-white rounded-corners box-shade">
+                    <div class="p-card h3">While it is still <strong class="text-torq">free</strong>. Why not give it a
+                        try?</div>
+                    <div class="p-card h5">Learn the modern financial <strong class="text-torq">secrets of the
+                            Rich</strong> that the Poor don't know</div>
+                </div>
+
+                <div class="container text-center">
+                    <div class="columns">
+                        <div class="column col-6 col-md-12">
+                            <div class="pd-bot h5 text-bold">Introducing The Founder of Proptech Foundation</div>
+                            <img class="profile-img" src="Cheong Kong Ming.jpg">
+                            <div class="text-large text-bold">Dr KM Cheong</div>
+                            <div class="pd-bot-10 text-small text-bold">&#8226; Founder of Mortgage Management Since 2008</div>
+                            <div class="text-small">&#8226; Appointed as Malaysia Mortgage Risk Management
+                                Advisor by World Consumer Association Since 2016</div>
+                            <div class="text-small">&#8226; President of World Property Management Technology
+                                Foundation Since 2017</div>
+                            <div class="pd-bot text-small">&#8226; PhD in Business Administration (By Research)</div>
+                            <div class="text-small text-bold">A 3-min video of Dr KM Cheong</div>
+                            <div class="pd-bot bd-bot container">
+                                <div class="columns">
+                                    <div class="column col-12 flex-centered">
+                                        <div id="main">
+                                            <div class="youtube-player" data-id="cgR8hAaeQQ8"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pd-top-bottom h5 text-bold">Introducing Our Agency Partner</div>
+                            <img class="profile-img" src="Kevin Lo.jpg">
+                            <div class="text-large text-bold">Kevin Lo</div>
+                            <div class="text-small text-bold">&#8226; The Founder of Kevin Lo Proptech Foundation Agency
+                            </div>
+                            <div class="text-small">&#8227; No 1 Proptech Foundation agency in Malaysia</div>
+                            <div class="text-small">&#8227; Multiple award winning agency</div>
+                            <div class="pd-bot-10 text-small">&#8227; Expert in the field of mortgage management consultancy</div>
+                            <div class="text-small">&#8226; Civil and Commercial Litigation Lawyer</div>
+                            <div class="text-small">&#8226; Graduate from Northumbria University, Northumbria
+                                University, Newcastle Upon Tyne</div>
+                            <div class="text-small">&#8226; United Kingdom, LL. B Hons (Bachelor of Laws)</div>
+                            <div class="pd-bot bd-bot text-small">&#8226; BVC, Middle Temple, Barrister of England, Wales &
+                                Brunei Darussalam</div>
+                        </div>
+                        <div class="column col-6 col-md-12">
+                            <div class="container">
+                                <div class="columns box-shade">
+                                    <div class="column col-12 bg-blood-red box-shade">
+                                        <div class="h3 text-white text-center">Book Your Free Webinar Seat</div>
+                                    </div>
+                                    <div class="column col-12">
+                                        <div class="flex-centered">
+                                            <div class="text-center">
+                                                <p class="pd-top form-p-1">The clock is ticking away day by day.</p>
+                                                <p class="h4 form-p-2" id="the-final-countdown"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pd-left-right pd-bot column col-12 form-group">
+                                        <label class="form-label text-left">Name:</label>
+                                        <input class="form-input" type="text" id="message1" value="" placeholder="Enter Name" pattern="^([0-9a-zA-Z ]{1,200})$" required>
+
+                                        <label class="pd-top form-label text-left">Email:</label>
+                                        <input class="form-input" type="email" id="message2" value="" placeholder="Enter Email" pattern="^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{1,9})$" required>
+
+                                        <label class="pd-top form-label text-left">Phone:</label>
+                                        <div class="container">
+                                            <div class="columns">
+                                                <div class="column col-5">
+                                                    <select class="form-select" type="text" id="message3" value="">
+                                                        <option value="60" selected>Malaysia (+60)</option>
+                                                        <option value="213">Algeria (+213)</option>
+                                                        <option value="376">Andorra (+376)</option>
+                                                        <option value="244">Angola (+244)</option>
+                                                        <option value="1264">Anguilla (+1264)</option>
+                                                        <option value="1268">Antigua &amp; Barbuda (+1268)</option>
+                                                        <option value="54">Argentina (+54)</option>
+                                                        <option value="374">Armenia (+374)</option>
+                                                        <option value="297">Aruba (+297)</option>
+                                                        <option value="61">Australia (+61)</option>
+                                                        <option value="43">Austria (+43)</option>
+                                                        <option value="994">Azerbaijan (+994)</option>
+                                                        <option value="1242">Bahamas (+1242)</option>
+                                                        <option value="973">Bahrain (+973)</option>
+                                                        <option value="880">Bangladesh (+880)</option>
+                                                        <option value="1246">Barbados (+1246)</option>
+                                                        <option value="375">Belarus (+375)</option>
+                                                        <option value="32">Belgium (+32)</option>
+                                                        <option value="501">Belize (+501)</option>
+                                                        <option value="229">Benin (+229)</option>
+                                                        <option value="1441">Bermuda (+1441)</option>
+                                                        <option value="975">Bhutan (+975)</option>
+                                                        <option value="591">Bolivia (+591)</option>
+                                                        <option value="387">Bosnia Herzegovina (+387)</option>
+                                                        <option value="267">Botswana (+267)</option>
+                                                        <option value="55">Brazil (+55)</option>
+                                                        <option value="673">Brunei (+673)</option>
+                                                        <option value="359">Bulgaria (+359)</option>
+                                                        <option value="226">Burkina Faso (+226)</option>
+                                                        <option value="257">Burundi (+257)</option>
+                                                        <option value="855">Cambodia (+855)</option>
+                                                        <option value="237">Cameroon (+237)</option>
+                                                        <option value="1">Canada (+1)</option>
+                                                        <option value="238">Cape Verde Islands (+238)</option>
+                                                        <option value="1345">Cayman Islands (+1345)</option>
+                                                        <option value="236">Central African Republic (+236)</option>
+                                                        <option value="56">Chile (+56)</option>
+                                                        <option value="86">China (+86)</option>
+                                                        <option value="57">Colombia (+57)</option>
+                                                        <option value="269">Comoros (+269)</option>
+                                                        <option value="242">Congo (+242)</option>
+                                                        <option value="682">Cook Islands (+682)</option>
+                                                        <option value="506">Costa Rica (+506)</option>
+                                                        <option value="385">Croatia (+385)</option>
+                                                        <option value="53">Cuba (+53)</option>
+                                                        <option value="90392">Cyprus North (+90392)</option>
+                                                        <option value="357">Cyprus South (+357)</option>
+                                                        <option value="42">Czech Republic (+42)</option>
+                                                        <option value="45">Denmark (+45)</option>
+                                                        <option value="253">Djibouti (+253)</option>
+                                                        <option value="1809">Dominica (+1809)</option>
+                                                        <option value="1809">Dominican Republic (+1809)</option>
+                                                        <option value="593">Ecuador (+593)</option>
+                                                        <option value="20">Egypt (+20)</option>
+                                                        <option value="503">El Salvador (+503)</option>
+                                                        <option value="240">Equatorial Guinea (+240)</option>
+                                                        <option value="291">Eritrea (+291)</option>
+                                                        <option value="372">Estonia (+372)</option>
+                                                        <option value="251">Ethiopia (+251)</option>
+                                                        <option value="500">Falkland Islands (+500)</option>
+                                                        <option value="298">Faroe Islands (+298)</option>
+                                                        <option value="679">Fiji (+679)</option>
+                                                        <option value="358">Finland (+358)</option>
+                                                        <option value="33">France (+33)</option>
+                                                        <option value="594">French Guiana (+594)</option>
+                                                        <option value="689">French Polynesia (+689)</option>
+                                                        <option value="241">Gabon (+241)</option>
+                                                        <option value="220">Gambia (+220)</option>
+                                                        <option value="7880">Georgia (+7880)</option>
+                                                        <option value="49">Germany (+49)</option>
+                                                        <option value="233">Ghana (+233)</option>
+                                                        <option value="350">Gibraltar (+350)</option>
+                                                        <option value="30">Greece (+30)</option>
+                                                        <option value="299">Greenland (+299)</option>
+                                                        <option value="1473">Grenada (+1473)</option>
+                                                        <option value="590">Guadeloupe (+590)</option>
+                                                        <option value="671">Guam (+671)</option>
+                                                        <option value="502">Guatemala (+502)</option>
+                                                        <option value="224">Guinea (+224)</option>
+                                                        <option value="245">Guinea - Bissau (+245)</option>
+                                                        <option value="592">Guyana (+592)</option>
+                                                        <option value="509">Haiti (+509)</option>
+                                                        <option value="504">Honduras (+504)</option>
+                                                        <option value="852">Hong Kong (+852)</option>
+                                                        <option value="36">Hungary (+36)</option>
+                                                        <option value="354">Iceland (+354)</option>
+                                                        <option value="91">India (+91)</option>
+                                                        <option value="62">Indonesia (+62)</option>
+                                                        <option value="98">Iran (+98)</option>
+                                                        <option value="964">Iraq (+964)</option>
+                                                        <option value="353">Ireland (+353)</option>
+                                                        <option value="972">Israel (+972)</option>
+                                                        <option value="39">Italy (+39)</option>
+                                                        <option value="1876">Jamaica (+1876)</option>
+                                                        <option value="81">Japan (+81)</option>
+                                                        <option value="962">Jordan (+962)</option>
+                                                        <option value="7">Kazakhstan (+7)</option>
+                                                        <option value="254">Kenya (+254)</option>
+                                                        <option value="686">Kiribati (+686)</option>
+                                                        <option value="850">Korea North (+850)</option>
+                                                        <option value="82">Korea South (+82)</option>
+                                                        <option value="965">Kuwait (+965)</option>
+                                                        <option value="996">Kyrgyzstan (+996)</option>
+                                                        <option value="856">Laos (+856)</option>
+                                                        <option value="371">Latvia (+371)</option>
+                                                        <option value="961">Lebanon (+961)</option>
+                                                        <option value="266">Lesotho (+266)</option>
+                                                        <option value="231">Liberia (+231)</option>
+                                                        <option value="218">Libya (+218)</option>
+                                                        <option value="417">Liechtenstein (+417)</option>
+                                                        <option value="370">Lithuania (+370)</option>
+                                                        <option value="352">Luxembourg (+352)</option>
+                                                        <option value="853">Macao (+853)</option>
+                                                        <option value="389">Macedonia (+389)</option>
+                                                        <option value="261">Madagascar (+261)</option>
+                                                        <option value="265">Malawi (+265)</option>
+                                                        <option value="60">Malaysia (+60)</option>
+                                                        <option value="960">Maldives (+960)</option>
+                                                        <option value="223">Mali (+223)</option>
+                                                        <option value="356">Malta (+356)</option>
+                                                        <option value="692">Marshall Islands (+692)</option>
+                                                        <option value="596">Martinique (+596)</option>
+                                                        <option value="222">Mauritania (+222)</option>
+                                                        <option value="269">Mayotte (+269)</option>
+                                                        <option value="52">Mexico (+52)</option>
+                                                        <option value="691">Micronesia (+691)</option>
+                                                        <option value="373">Moldova (+373)</option>
+                                                        <option value="377">Monaco (+377)</option>
+                                                        <option value="976">Mongolia (+976)</option>
+                                                        <option value="1664">Montserrat (+1664)</option>
+                                                        <option value="212">Morocco (+212)</option>
+                                                        <option value="258">Mozambique (+258)</option>
+                                                        <option value="95">Myanmar (+95)</option>
+                                                        <option value="264">Namibia (+264)</option>
+                                                        <option value="674">Nauru (+674)</option>
+                                                        <option value="977">Nepal (+977)</option>
+                                                        <option value="31">Netherlands (+31)</option>
+                                                        <option value="687">New Caledonia (+687)</option>
+                                                        <option value="64">New Zealand (+64)</option>
+                                                        <option value="505">Nicaragua (+505)</option>
+                                                        <option value="227">Niger (+227)</option>
+                                                        <option value="234">Nigeria (+234)</option>
+                                                        <option value="683">Niue (+683)</option>
+                                                        <option value="672">Norfolk Islands (+672)</option>
+                                                        <option value="670">Northern Marianas (+670)</option>
+                                                        <option value="47">Norway (+47)</option>
+                                                        <option value="968">Oman (+968)</option>
+                                                        <option value="680">Palau (+680)</option>
+                                                        <option value="507">Panama (+507)</option>
+                                                        <option value="675">Papua New Guinea (+675)</option>
+                                                        <option value="595">Paraguay (+595)</option>
+                                                        <option value="51">Peru (+51)</option>
+                                                        <option value="63">Philippines (+63)</option>
+                                                        <option value="48">Poland (+48)</option>
+                                                        <option value="351">Portugal (+351)</option>
+                                                        <option value="1787">Puerto Rico (+1787)</option>
+                                                        <option value="974">Qatar (+974)</option>
+                                                        <option value="262">Reunion (+262)</option>
+                                                        <option value="40">Romania (+40)</option>
+                                                        <option value="7">Russia (+7)</option>
+                                                        <option value="250">Rwanda (+250)</option>
+                                                        <option value="378">San Marino (+378)</option>
+                                                        <option value="239">Sao Tome &amp; Principe (+239)</option>
+                                                        <option value="966">Saudi Arabia (+966)</option>
+                                                        <option value="221">Senegal (+221)</option>
+                                                        <option value="381">Serbia (+381)</option>
+                                                        <option value="248">Seychelles (+248)</option>
+                                                        <option value="232">Sierra Leone (+232)</option>
+                                                        <option value="65">Singapore (+65)</option>
+                                                        <option value="421">Slovak Republic (+421)</option>
+                                                        <option value="386">Slovenia (+386)</option>
+                                                        <option value="677">Solomon Islands (+677)</option>
+                                                        <option value="252">Somalia (+252)</option>
+                                                        <option value="27">South Africa (+27)</option>
+                                                        <option value="34">Spain (+34)</option>
+                                                        <option value="94">Sri Lanka (+94)</option>
+                                                        <option value="290">St. Helena (+290)</option>
+                                                        <option value="1869">St. Kitts (+1869)</option>
+                                                        <option value="1758">St. Lucia (+1758)</option>
+                                                        <option value="249">Sudan (+249)</option>
+                                                        <option value="597">Suriname (+597)</option>
+                                                        <option value="268">Swaziland (+268)</option>
+                                                        <option value="46">Sweden (+46)</option>
+                                                        <option value="41">Switzerland (+41)</option>
+                                                        <option value="963">Syria (+963)</option>
+                                                        <option value="886">Taiwan (+886)</option>
+                                                        <option value="7">Tajikstan (+7)</option>
+                                                        <option value="66">Thailand (+66)</option>
+                                                        <option value="228">Togo (+228)</option>
+                                                        <option value="676">Tonga (+676)</option>
+                                                        <option value="1868">Trinidad &amp; Tobago (+1868)</option>
+                                                        <option value="216">Tunisia (+216)</option>
+                                                        <option value="90">Turkey (+90)</option>
+                                                        <option value="7">Turkmenistan (+7)</option>
+                                                        <option value="993">Turkmenistan (+993)</option>
+                                                        <option value="1649">Turks &amp; Caicos Islands (+1649)</option>
+                                                        <option value="688">Tuvalu (+688)</option>
+                                                        <option value="256">Uganda (+256)</option>
+                                                        <option value="44">UK (+44)</option>
+                                                        <option value="380">Ukraine (+380)</option>
+                                                        <option value="971">United Arab Emirates (+971)</option>
+                                                        <option value="598">Uruguay (+598)</option>
+                                                        <option value="1">USA (+1)</option>
+                                                        <option value="7">Uzbekistan (+7)</option>
+                                                        <option value="678">Vanuatu (+678)</option>
+                                                        <option value="379">Vatican City (+379)</option>
+                                                        <option value="58">Venezuela (+58)</option>
+                                                        <option value="84">Vietnam (+84)</option>
+                                                        <option value="84">Virgin Islands - British (+1284)</option>
+                                                        <option value="84">Virgin Islands - US (+1340)</option>
+                                                        <option value="681">Wallis &amp; Futuna (+681)</option>
+                                                        <option value="969">Yemen (North)(+969)</option>
+                                                        <option value="967">Yemen (South)(+967)</option>
+                                                        <option value="260">Zambia (+260)</option>
+                                                        <option value="263">Zimbabwe (+263)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="column col-7">
+                                                    <input class="form-input" type="text" id="message4" value="" placeholder="Enter Phone Number" pattern="^([0-9]{1,200})$" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="pd-top form-label text-left">Choose Your <b>FREE</b> Zoom Webinar Session:</label>
+                                        <select class="form-select" type="text" id="message5" value="">
+                                            <option value="Coming Wednesday 830pm" selected>Coming Wednesday 8.30pm</option>
+                                            <option value="Coming Saturday 3pm">Coming Saturday 3pm</option>
+                                        </select>
+                                        <label class="pd-top form-label text-left">Do you have a mortgage loan?</label>
+                                        <select class="form-select" type="text" id="message6" value="">
+                                            <option value="Yes currently paying" selected>Yes, currently I'm paying my mortgage</option>
+                                            <option value="No loan but planning to get one">No, but I'm planning to get a mortgage loan</option>
+                                            <option value="No loan but knows someone who has">No, but I know someone who has a mortgage loan</option>
+                                            <option value="No loan">No, I don't have a mortgage loan</option>
+                                        </select>
+                                        <button class="mg-top btn btn-primary btn-lg box-shade float-left" onclick=sendmessage()>Submit & Book My Seat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pd-top column col-12">
+                            <img class="profile-img" src="Faiz Sabli.jpg">
+                            <p class="text-small text-bold pd-bot-10">&#128522; Hey, thanks for scrolling until the end.</p>
+                            <p class="text-small pd-bot-10">Hi I am Faiz Sabli an affiliate of Kevin Lo Proptech Foundation Agency. Kevin and I go way back when he first started practicing law in Brunei Darussalam. Kevin always has a vision of making the lives of the people around him better through personal development programs and entreprenuership. He believes that helping people to quickly settle their housing loans is a powerful and relevant way to help others move towards freedom.</p>
+                            <p class="text-small text-bold">Join me in this quest to put the power back into the hands of the people (YOU!)</p>
+                        </div>
+                        <div class="column col-12 pd-top-bottom">
+                            <p class="text-tiny text-bold">Copyright © 2021 faiz-sabli.github.io All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
